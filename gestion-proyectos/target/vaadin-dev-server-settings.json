@@ -1,0 +1,18 @@
+{
+  "frontendFolder": "C:/Users/germa/Desktop/TFG/TFG/gestion-proyectos/src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/germa/Desktop/TFG/TFG/gestion-proyectos/src/main/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/germa/Desktop/TFG/TFG/gestion-proyectos/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\germa\\Desktop\\TFG\\TFG\\gestion-proyectos\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\germa\\Desktop\\TFG\\TFG\\gestion-proyectos\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/germa/Desktop/TFG/TFG/gestion-proyectos/target/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/germa/Desktop/TFG/TFG/gestion-proyectos/target/dev-bundle/config",
+  "i18nOutput": "target/classes/vaadin-i18n",
+  "jarResourcesFolder": "C:/Users/germa/Desktop/TFG/TFG/gestion-proyectos/src/main/frontend/generated/jar-resources",
+  "themeName": "default",
+  "clientServiceWorkerSource": "C:\\Users\\germa\\Desktop\\TFG\\TFG\\gestion-proyectos\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
