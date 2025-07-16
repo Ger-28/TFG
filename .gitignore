@@ -18,3 +18,4 @@ gestion-proyectos/target/maven-status/maven-compiler-plugin/compile/default-comp
 gestion-proyectos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 gestion-proyectos/target/tab.launch
 gestion-proyectos/target/vaadin-dev-server-settings.json
+gestion-proyectos/target/classes/META-INF/VAADIN/config/flow-build-info.json
