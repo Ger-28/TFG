@@ -15,9 +15,11 @@ import java.util.Set;
 @Table(name = "proyecto")
 public class Proyecto extends AbstractEntity<Long> {
 
+    public static final int EVALUACION_MAX_LENGTH = 45;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "idproyecto")
+    @Column(name = "id_proyecto")
     private Long id;
 
     @Column(name = "titulo", nullable = false, length = 100)
@@ -32,28 +34,28 @@ public class Proyecto extends AbstractEntity<Long> {
     @Size(max = 20)
     private String acronimo;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = RolProfesorConverter.class)
     @Column(name = "rol_profesor")
     private RolProfesor rolProfesor;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = EstadoProyectoConverter.class)
     @Column(name = "estado")
     private EstadoProyecto estado;
 
-    @Column(name = "evaluacion", length = 45)
-    @Size(max = 45)
+    @Column(name = "evaluacion", length = EVALUACION_MAX_LENGTH)
+    @Size(max = EVALUACION_MAX_LENGTH)
     private String evaluacion;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "idprofesor")
-    private Profesor profesor;
+    @ManyToOne
+    @JoinColumn(name = "id_coordinador")
+    private Participante coordinador;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "idtecnico")
-    private Tecnico tecnico;
+    @ManyToOne
+    @JoinColumn(name = "id_tecnico")
+    private Usuario tecnico;
 
     @OneToMany(mappedBy = "proyecto", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ProyectoEntidad> entidades = new HashSet<>();
+    private Set<ProyectoParticipante> participantes = new HashSet<>();
 
     @Override
     public @Nullable Long getId() {
@@ -108,27 +110,27 @@ public class Proyecto extends AbstractEntity<Long> {
         this.evaluacion = evaluacion;
     }
 
-    public Profesor getProfesor() {
-        return profesor;
+    public Participante getCoordinador() {
+        return coordinador;
     }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setCoordinador(Participante coordinador) {
+        this.coordinador = coordinador;
     }
 
-    public Tecnico getTecnico() {
+    public Usuario getTecnico() {
         return tecnico;
     }
 
-    public void setTecnico(Tecnico tecnico) {
+    public void setTecnico(Usuario tecnico) {
         this.tecnico = tecnico;
     }
 
-    public Set<ProyectoEntidad> getEntidades() {
-        return entidades;
+    public Set<ProyectoParticipante> getParticipantes() {
+        return participantes;
     }
 
-    public void setEntidades(Set<ProyectoEntidad> entidades) {
-        this.entidades = entidades;
+    public void setParticipantes(Set<ProyectoParticipante> participantes) {
+        this.participantes = participantes;
     }
 }

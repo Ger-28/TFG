@@ -14,7 +14,7 @@ public class Entidad extends AbstractEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "identidad")
+    @Column(name = "id_entidad")
     private Long id;
 
     @Column(name = "nombre", length = 45)

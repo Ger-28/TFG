@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Servicio al que pertenece un técnico.
+ * Servicio al que pertenece un usuario.
  */
 @Entity
 @Table(name = "servicio")
@@ -14,7 +14,7 @@ public class Servicio extends AbstractEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "idservicio")
+    @Column(name = "id_servicio")
     private Long id;
 
     @Column(name = "nombre", length = 100)

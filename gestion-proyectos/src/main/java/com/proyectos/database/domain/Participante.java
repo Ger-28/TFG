@@ -2,28 +2,26 @@ package com.proyectos.database.domain;
 
 import com.proyectos.base.domain.AbstractEntity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Departamento dentro de una entidad académica.
+ * Participante asociado a una entidad.
  */
 @Entity
-@Table(name = "departamento")
-public class Departamento extends AbstractEntity<Long> {
+@Table(name = "participante")
+public class Participante extends AbstractEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_departamento")
+    @Column(name = "id_participante")
     private Long id;
 
-    @Column(name = "nombre", length = 75)
-    @Size(max = 75)
+    @Column(name = "nombre", nullable = false, length = 50)
+    @Size(max = 50)
+    @NotBlank
     private String nombre;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_entidad")
-    private TipoEntidad tipoEntidad;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_entidad")
@@ -40,14 +38,6 @@ public class Departamento extends AbstractEntity<Long> {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public TipoEntidad getTipoEntidad() {
-        return tipoEntidad;
-    }
-
-    public void setTipoEntidad(TipoEntidad tipoEntidad) {
-        this.tipoEntidad = tipoEntidad;
     }
 
     public Entidad getEntidad() {
